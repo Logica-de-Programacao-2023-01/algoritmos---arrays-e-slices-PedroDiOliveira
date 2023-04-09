@@ -3,19 +3,23 @@ package main
 import "fmt"
 
 func main() {
-	var x string
-	slice := []string{"a", "b", "c", "ab", "bc", "aa", "cc", "bb"}
-	resultado := false
-	fmt.Println("Qual elemento deseja remover?")
-	fmt.Scan(&x)
-	for _, i := range slice {
-		if x == i {
-			resultado = true
+	slice := make([]string, 8)
+	slice[0] = "a"
+	slice[1] = "b"
+	slice[2] = "c"
+	slice[3] = "ab"
+	slice[4] = "ac"
+	slice[5] = "bc"
+	slice[6] = "ac"
+	slice[7] = "aa"
+	var resultado []string
+	var valor string
+	fmt.Println("Digite um valor")
+	fmt.Scan(&valor)
+	for _, x := range slice {
+		if x != valor {
+			resultado = append(resultado, x)
 		}
 	}
-	if resultado {
-		slice = (slice:x)
-	}else {
-		fmt.Println("Não há um elemento similar na lista")
-	}
+	fmt.Println(resultado)
 }
