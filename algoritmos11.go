@@ -3,17 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	var matriz [3][2]int{
-		{2,4}
-		{1,8}
-		{6,7}
+	// Criando o array bidimensional
+	matriz := [2][3]int{
+		{1, 2, 3},
+		{4, 5, 6},
 	}
-	var linha int
-	var coluna int
-	fmt.Println("Qual a linha desejada?")
+
+	// Solicitando ao usuário os índices de linha e coluna
+	var linha, coluna int
+	fmt.Print("Informe o índice da linha: ")
 	fmt.Scan(&linha)
-	fmt.Println("Qual a coluna desejada?")
+	fmt.Print("Informe o índice da coluna: ")
 	fmt.Scan(&coluna)
-	resultado := matriz[linha][coluna]
-	fmt.Println(resultado)
+
+	// Imprimindo o valor armazenado na posição informada
+	fmt.Printf("O valor armazenado na posição [%d][%d] é %d\n", linha, coluna, matriz[linha][coluna])
 }
